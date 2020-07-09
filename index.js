@@ -28,10 +28,16 @@ function processFirstItem(stringList, callback) {
  * 
  * 1. What is the difference between counter1 and counter2?
  * 
+ * Counter uses an outer function scope while the other uses a global scope for its count variable
+ * 
  * 2. Which of the two uses a closure? How can you tell?
+ * 
+ * the first one uses an outermost function closure while the second one gives a global function closure, the count variable for the second is outside the function and has no nesting function
  * 
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
  *
+ * The first one is perferable if the variable being intitialized is only being used within the function, while the second one is perferable if the variable being enclosed is being used in multiple places outside the function
+ * 
 */
 
 // counter1 code
@@ -56,9 +62,13 @@ function counter2() {
 
 Write a function called `inning` that generates a random number of points that a team scored in an inning. This should be a whole number between 0 and 2. */
 
-function inning(/*Code Here*/){
+function inning(){
 
-    /*Code Here*/
+  let max = 2;
+  let min = 0;
+  let result = Math.floor(Math.random() * (max - min + 1)) + min;
+  // console.log(result);
+  return result;
 
 }
 
@@ -76,9 +86,35 @@ finalScore(inning, 9) might return:
 
 */ 
 
-function finalScore(/*code Here*/){
+// function finalScore(inning, number_of_innings){
 
-  /*Code Here*/
+//   let home_score = 0;
+//   let away_score = 0;
+
+//   for(let i = 0; i < number_of_innings; i++){
+//     home_score += inning;
+
+//   }
+
+//   for(let i = 0; i < number_of_innings; i++){
+//     away_score += inning;
+
+//   }     
+//   return {"Home": home_score, "Away": away_score};
+
+// }
+
+function finalScore(inning, number_of_innings){
+
+  let home_score = 0;
+  let away_score = 0;
+
+  for(let i = 0; i < number_of_innings; i++){
+    home_score += inning();
+    away_score += inning();
+
+  }     
+  return {"Home": home_score, "Away": away_score};
 
 }
 
@@ -103,8 +139,17 @@ and returns the score at each pont in the game, like so:
 
 Final Score: 6 - 10 */
 
-function scoreboard(/* CODE HERE */) {
-  /* CODE HERE */
+function scoreboard(inning, number_of_innings) {
+  let home_score = 0;
+  let away_score = 0;
+
+  for(let i = 0; i < number_of_innings; i++){
+    home_score += inning();
+    away_score += inning();
+     let inning_number = i + 1;
+     console.log(inning_number + "th " + "inning: " + home_score + " - " + away_score);
+  }
+  console.log("Final Score: "+ home_score +" - " +away_score);
 }
 
 
