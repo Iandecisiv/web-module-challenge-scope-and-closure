@@ -43,7 +43,7 @@ Edit the `ReadMe` file with your answers.
 
 1. In your own words, define closure (1-2 sentences).
 
-
+Closure is data stored in a hidden enviroment that determines if an outer variable can be accesed by the function. 
 
 2. Study the following code, then answer the questions below.
 
@@ -67,15 +67,15 @@ dansRoll();
 
 a. Where is closure used in this code? How can you tell?
 
-
+The colosure is used within the inner function after being passed into from the outer function as a parameter.
 
 b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
 
-
+Function is always the same, name is always the same but the first and seccond time math.random is changed we could get different numbers
 
 c. What is the lexical scope of `newRoll`? 
 
-
+the lexical scope of 'newRoll' is within the inner function
 
 ### Task 2c - Exit Ticket
 
@@ -108,6 +108,8 @@ addSix(21); // returns 27
 ```
 
 3. Research the differences between functional programming and object oriented programming. Then, describe the pros and cons of functional programming vs object-oriented programming. This is a common interview question and great practice!
+
+Functional programing provides advantages like efficentcy and nested functions while object oriented programming allows for abstraction and inheritence.
 
 ## Resources
 

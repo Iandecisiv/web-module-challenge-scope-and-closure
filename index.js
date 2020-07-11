@@ -152,4 +152,4 @@ function scoreboard(inning, number_of_innings) {
   console.log("Final Score: "+ home_score +" - " +away_score);
 }
 
-
+// scoreboard(inning, 12);
